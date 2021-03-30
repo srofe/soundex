@@ -24,10 +24,14 @@ private:
     std::string encodedDigits(const std::string& word) const {
         std::string encoding;
         for (auto letter: word) {
-            if (encoding.length() == MaxCodeLength - 1) break;
+            if (isComplet(encoding)) break;
             encoding += encodedDigit(letter);
         }
         return encoding;
+    }
+
+    bool isComplet(const std::string& encoding) const {
+        return encoding.length() == MaxCodeLength -1;
     }
 
     std::string encodedDigit(char letter) const {
