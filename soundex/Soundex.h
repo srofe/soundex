@@ -22,8 +22,9 @@ private:
     }
 
     std::string encodedDigits(const std::string& word) const {
-        if (word.empty()) return "";
-        return encodedDigit(word.front());
+        std::string encoding;
+        for (auto letter: word) encoding += encodedDigit(letter);
+        return encoding;
     }
 
     std::string encodedDigit(char letter) const {
