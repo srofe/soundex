@@ -21,11 +21,12 @@ public:
                 {'r', "6"},
         };
         auto digit = encodings.find(letter);
-        return digit == encodings.end() ? "" : digit->second;
+        return digit == encodings.end() ? NotADigit : digit->second;
     }
 
 private:
     static const size_t MaxCodeLength{4};
+    const std::string NotADigit{"*"};
 
     std::string head(const std::string& word) const {
         return word.substr(0, 1);
@@ -43,14 +44,15 @@ private:
         std::string encoding;
         for (auto letter: word) {
             if (isComplete(encoding)) break;
-            if (encodedDigit(letter) != lastDigit(encoding))
-                encoding += encodedDigit(letter);
+            auto digit = encodedDigit(letter);
+            if (digit != NotADigit && digit != lastDigit(encoding))
+                encoding += digit;
         }
         return encoding;
     }
 
     std::string lastDigit(const std::string& encoding) const {
-        if (encoding.empty()) return "";
+        if (encoding.empty()) return NotADigit;
         return std::string(1, encoding.back());
     }
 
