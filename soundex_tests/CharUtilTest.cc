@@ -31,5 +31,9 @@ TEST(CharUtils, ConsontantsAreNotVowels) {
 }
 
 TEST(CharUtils, ConvertsLetterToUpperCase) {
-    ASSERT_EQ(upper('a'), 'A');
+    ASSERT_THAT(upper('a'), Eq('A'));
+}
+
+TEST(CharUtils, ConversionOfAlreadyUpperCaseCharacter) {
+    ASSERT_THAT(upper('B'), Eq('B'));
 }
