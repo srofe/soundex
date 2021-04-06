@@ -6,6 +6,6 @@ using namespace std;
 
 namespace charutil {
     bool isVowel(char letter) {
-        return true;
+        return string("A").find(letter) != string::npos;
     }
 }
