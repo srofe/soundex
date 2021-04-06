@@ -1,8 +1,9 @@
-#include <string>
-#include <unordered_map>
-
 #ifndef SOUNDEX_H
 #define SOUNDEX_H
+
+#include <string>
+#include <unordered_map>
+#include "CharUtil.h"
 
 class Soundex {
 public:
@@ -20,7 +21,7 @@ public:
                 {'m', "5"}, {'n', "5"},
                 {'r', "6"},
         };
-        auto digit = encodings.find(lower(letter));
+        auto digit = encodings.find(charutil::lower(letter));
         return digit == encodings.end() ? NotADigit : digit->second;
     }
 
@@ -37,7 +38,7 @@ private:
     }
 
     std::string upperFront(const std::string& string) const {
-        return std::string(1, std::toupper(static_cast<unsigned char>(string.front())));
+        return std::string(1, charutil::upper(string.front()));
     }
 
     std::string encodedDigits(const std::string& word) const {
@@ -59,7 +60,7 @@ private:
 
     void encodeLetter(std::string& encoding, char letter, char lastLetter) const {
         auto digit = encodedDigit(letter);
-        if (digit != NotADigit && (digit != lastDigit(encoding) || isVowel(lastLetter)))
+        if (digit != NotADigit && (digit != lastDigit(encoding) || charutil::isVowel(lastLetter)))
             encoding += digit;
     }
 
@@ -75,14 +76,6 @@ private:
     std::string zeroPad(const std::string& word) const {
         auto zerosNeeded = MaxCodeLength - word.length();
         return word + std::string(zerosNeeded, '0');
-    }
-
-    char lower(char c) const {
-        return std::tolower(c);
-    }
-
-    bool isVowel(char letter) const {
-        return std::string("aeiouy").find(lower(letter)) != std::string::npos;
     }
 };
 
