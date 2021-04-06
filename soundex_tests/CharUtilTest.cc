@@ -49,3 +49,7 @@ TEST(CharUtils, NumericCharactersIgnoredwhenConvertingToUpper) {
 TEST(CharUtils, ConvertsLetterToLowerCase) {
     ASSERT_THAT(lower('A'), Eq('a'));
 }
+
+TEST(CharUtils, ConversionOfAlreadyLowerCaseCharacter) {
+    ASSERT_THAT(lower('c'), Eq('c'));
+}
