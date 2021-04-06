@@ -11,3 +11,7 @@ using namespace charutil;
 TEST(CharUtils, IsVowelForSpecificLetters) {
     ASSERT_TRUE(isVowel('A'));
 }
+
+TEST(CharUtils, IsVowelForLowercaseLetters) {
+    ASSERT_TRUE(isVowel('a'));
+}
