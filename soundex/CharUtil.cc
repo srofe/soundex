@@ -14,6 +14,6 @@ namespace charutil {
     }
 
     char lower(char letter) {
-        return 'a';
+        return std::tolower(static_cast<unsigned char>(letter));
     }
 }
