@@ -1,8 +1,8 @@
-#include <string>
-#include <unordered_map>
-
 #ifndef SOUNDEX_H
 #define SOUNDEX_H
+
+#include <string>
+#include <unordered_map>
 
 class Soundex {
 public:
