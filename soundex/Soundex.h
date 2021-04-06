@@ -3,6 +3,7 @@
 
 #include <string>
 #include <unordered_map>
+#include "CharUtil.h"
 
 class Soundex {
 public:
@@ -59,7 +60,7 @@ private:
 
     void encodeLetter(std::string& encoding, char letter, char lastLetter) const {
         auto digit = encodedDigit(letter);
-        if (digit != NotADigit && (digit != lastDigit(encoding) || isVowel(lastLetter)))
+        if (digit != NotADigit && (digit != lastDigit(encoding) || charutil::isVowel(lastLetter)))
             encoding += digit;
     }
 
@@ -79,10 +80,6 @@ private:
 
     char lower(char c) const {
         return std::tolower(c);
-    }
-
-    bool isVowel(char letter) const {
-        return std::string("aeiouy").find(lower(letter)) != std::string::npos;
     }
 };
 
