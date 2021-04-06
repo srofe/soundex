@@ -21,7 +21,7 @@ public:
                 {'m', "5"}, {'n', "5"},
                 {'r', "6"},
         };
-        auto digit = encodings.find(lower(letter));
+        auto digit = encodings.find(charutil::lower(letter));
         return digit == encodings.end() ? NotADigit : digit->second;
     }
 
@@ -76,10 +76,6 @@ private:
     std::string zeroPad(const std::string& word) const {
         auto zerosNeeded = MaxCodeLength - word.length();
         return word + std::string(zerosNeeded, '0');
-    }
-
-    char lower(char c) const {
-        return std::tolower(c);
     }
 };
 
