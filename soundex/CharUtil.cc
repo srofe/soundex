@@ -10,6 +10,6 @@ namespace charutil {
     }
 
     char upper(char letter) {
-        return 'A';
+        return std::toupper(static_cast<unsigned char>(letter));
     }
 }
