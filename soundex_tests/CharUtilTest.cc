@@ -45,3 +45,7 @@ TEST(CharUtils, NonLettersIgnoredWhenConvertingToUpper) {
 TEST(CharUtils, NumericCharactersIgnoredwhenConvertingToUpper) {
     ASSERT_THAT(upper('3'), Eq('3'));
 }
+
+TEST(CharUtils, ConvertsLetterToLowerCase) {
+    ASSERT_THAT(lower('A'), Eq('a'));
+}
