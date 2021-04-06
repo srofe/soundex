@@ -53,3 +53,11 @@ TEST(CharUtils, ConvertsLetterToLowerCase) {
 TEST(CharUtils, ConversionOfAlreadyLowerCaseCharacter) {
     ASSERT_THAT(lower('c'), Eq('c'));
 }
+
+TEST(CharUtils, NonLettersIgnoredWhenConvertingToLower) {
+    ASSERT_THAT(lower('='), Eq('='));
+}
+
+TEST(CharUtils, NumericCharactersIgnoredwhenConvertingToLower) {
+    ASSERT_THAT(lower('3'), Eq('3'));
+}
