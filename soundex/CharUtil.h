@@ -7,6 +7,7 @@
 
 namespace charutil {
     bool isVowel(char letter);
+    char upper(char letter);
 }
 
 #endif //CHAPTER02_CHARUTIL_H

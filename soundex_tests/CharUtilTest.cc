@@ -29,3 +29,7 @@ TEST(CharUtils, IsVowelForLowercaseLetters) {
 TEST(CharUtils, ConsontantsAreNotVowels) {
     ASSERT_FALSE(isVowel('b'));
 }
+
+TEST(CharUtils, ConvertsLetterToUpperCase) {
+    ASSERT_EQ(upper('a'), 'A');
+}

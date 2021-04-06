@@ -8,4 +8,8 @@ namespace charutil {
     bool isVowel(char letter) {
         return string("aeiouy").find(tolower(letter)) != string::npos;
     }
+
+    char upper(char letter) {
+        return 'A';
+    }
 }
