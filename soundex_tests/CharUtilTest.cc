@@ -25,3 +25,7 @@ TEST(CharUtils, IsVowelForLowercaseLetters) {
     ASSERT_TRUE(isVowel('u'));
     ASSERT_TRUE(isVowel('y'));
 }
+
+TEST(CharUtils, ConsontantsAreNotVowels) {
+    ASSERT_FALSE(isVowel('b'));
+}
