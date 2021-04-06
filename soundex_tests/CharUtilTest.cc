@@ -37,3 +37,11 @@ TEST(CharUtils, ConvertsLetterToUpperCase) {
 TEST(CharUtils, ConversionOfAlreadyUpperCaseCharacter) {
     ASSERT_THAT(upper('B'), Eq('B'));
 }
+
+TEST(CharUtils, NonLettersIgnoredWhenConvertingToUpper) {
+    ASSERT_THAT(upper('='), Eq('='));
+}
+
+TEST(CharUtils, NumericCharactersIgnoredwhenConvertingToUpper) {
+    ASSERT_THAT(upper('3'), Eq('3'));
+}
