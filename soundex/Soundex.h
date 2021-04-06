@@ -38,7 +38,7 @@ private:
     }
 
     std::string upperFront(const std::string& string) const {
-        return std::string(1, std::toupper(static_cast<unsigned char>(string.front())));
+        return std::string(1, charutil::upper(string.front()));
     }
 
     std::string encodedDigits(const std::string& word) const {
