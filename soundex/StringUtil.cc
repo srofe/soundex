@@ -1,4 +1,5 @@
 #include "StringUtil.h"
+#include <iostream>
 
 namespace stringutil {
     std::string head(const std::string& word) {
@@ -10,7 +11,8 @@ namespace stringutil {
         return word.substr(1);
     }
 
-    std::string zeroPad(const std::string& word, unsigned int toLength) {
+    std::string zeroPad(const std::string &word, unsigned int toLength) {
+        if (toLength < word.length()) return word;
         auto numberOfZerosToAdd = toLength - word.length();
         return word + std::string(numberOfZerosToAdd, '0');
     }

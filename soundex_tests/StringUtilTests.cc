@@ -40,3 +40,7 @@ TEST(StringUtils, ZeroPadTwoCharacters) {
 TEST(StringUtils, ZeroPadDoesNotChangeCaseOfString) {
     ASSERT_THAT(zeroPad("aBcDEFghiJKlmn", 20), Eq("aBcDEFghiJKlmn000000"));
 }
+
+TEST(StringUtils, WhenLengthOfPaddedStringLessThanStringDoNotChangeString) {
+    ASSERT_THAT(zeroPad("lkij", 3), Eq("lkij"));
+}
