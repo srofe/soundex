@@ -12,3 +12,7 @@ TEST(StringUtils, ExtractsFirstCharacterFromString) {
 TEST(StringUtils, ExtractedCharacterMaintainsCase) {
     ASSERT_THAT(head("fedcba"), Ne("F"));
 }
+
+TEST(StringUtil, HeadOfEmptyStringIsEmptyString) {
+    ASSERT_THAT(head(""), Eq(""));
+}
