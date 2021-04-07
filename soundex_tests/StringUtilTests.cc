@@ -24,3 +24,7 @@ TEST(StringUtil, TailRemovesFirstCharacterFromString) {
 TEST(StringUtil, TailDoesNotChangeCaseOfString) {
     ASSERT_THAT(tail("aSdFg"), Eq("SdFg"));
 }
+
+TEST(StringUtil, TailOfEmptyStringIsEmptyString) {
+    ASSERT_THAT(tail(""), Eq(""));
+}
