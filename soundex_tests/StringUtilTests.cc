@@ -20,3 +20,7 @@ TEST(StringUtil, HeadOfEmptyStringIsEmptyString) {
 TEST(StringUtil, TailRemovesFirstCharacterFromString) {
     ASSERT_THAT(tail("qwerty"), Eq("werty"));
 }
+
+TEST(StringUtil, TailDoesNotChangeCaseOfString) {
+    ASSERT_THAT(tail("aSdFg"), Eq("SdFg"));
+}
