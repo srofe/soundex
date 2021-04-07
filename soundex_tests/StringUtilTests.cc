@@ -13,26 +13,30 @@ TEST(StringUtils, HeadDoesNotChangeCaseOfString) {
     ASSERT_THAT(head("fedcba"), Ne("F"));
 }
 
-TEST(StringUtil, HeadOfEmptyStringIsEmptyString) {
+TEST(StringUtils, HeadOfEmptyStringIsEmptyString) {
     ASSERT_THAT(head(""), Eq(""));
 }
 
-TEST(StringUtil, TailRemovesFirstCharacterFromString) {
+TEST(StringUtils, TailRemovesFirstCharacterFromString) {
     ASSERT_THAT(tail("qwerty"), Eq("werty"));
 }
 
-TEST(StringUtil, TailDoesNotChangeCaseOfString) {
+TEST(StringUtils, TailDoesNotChangeCaseOfString) {
     ASSERT_THAT(tail("aSdFg"), Eq("SdFg"));
 }
 
-TEST(StringUtil, TailOfEmptyStringIsEmptyString) {
+TEST(StringUtils, TailOfEmptyStringIsEmptyString) {
     ASSERT_THAT(tail(""), Eq(""));
 }
 
-TEST(StringUtil, ZeroPadSingleCharacter) {
+TEST(StringUtils, ZeroPadSingleCharacter) {
     ASSERT_THAT(zeroPad("A", 4), Eq("A000"));
 }
 
-TEST(StringUtile, ZeroPadTwoCharacters) {
+TEST(StringUtils, ZeroPadTwoCharacters) {
     ASSERT_THAT(zeroPad("ab", 5), Eq("ab000"));
+}
+
+TEST(StringUtils, ZeroPadDoesNotChangeCaseOfString) {
+    ASSERT_THAT(zeroPad("aBcDEFghiJKlmn", 20), Eq("aBcDEFghiJKlmn000000"));
 }
