@@ -1,5 +1,4 @@
 #include "CharUtil.h"
-
 #include <string>
 
 using namespace std;
