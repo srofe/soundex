@@ -4,11 +4,12 @@
 #include <string>
 #include <unordered_map>
 #include "CharUtil.h"
+#include "StringUtil.h"
 
 class Soundex {
 public:
     std::string encode(const std::string& word) const {
-        return zeroPad(upperFront(head(word)) + tail(encodedDigits(word)));
+        return zeroPad(upperFront(stringutil::head(word)) + tail(encodedDigits(word)));
     }
 
     std::string encodedDigit(char letter) const {
@@ -28,10 +29,6 @@ public:
 private:
     static const size_t MaxCodeLength{4};
     const std::string NotADigit{"*"};
-
-    std::string head(const std::string& word) const {
-        return word.substr(0, 1);
-    }
 
     std::string tail(const std::string& word) const {
         return word.substr(1);
