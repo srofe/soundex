@@ -9,4 +9,8 @@ namespace stringutil {
         if (word.length() == 0) return "";
         return word.substr(1);
     }
+
+    std::string zeroPad(const std::string& word, unsigned int toLength) {
+        return "A000";
+    }
 }

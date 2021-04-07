@@ -28,3 +28,7 @@ TEST(StringUtil, TailDoesNotChangeCaseOfString) {
 TEST(StringUtil, TailOfEmptyStringIsEmptyString) {
     ASSERT_THAT(tail(""), Eq(""));
 }
+
+TEST(StringUtil, ZeroPadSingleCharacter) {
+    ASSERT_THAT(zeroPad("A", 4), Eq("A000"));
+}
