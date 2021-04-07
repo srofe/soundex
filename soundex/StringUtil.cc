@@ -2,6 +2,6 @@
 
 namespace stringutil {
     std::string head(const std::string& word) {
-        return "a";
+        return word.substr(0, 1);
     }
 }

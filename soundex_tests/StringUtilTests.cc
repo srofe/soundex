@@ -8,3 +8,7 @@ using namespace stringutil;
 TEST(StringUtils, ExtractsFirstCharacterFromString) {
     ASSERT_THAT(head("abcdef"), Eq("a"));
 }
+
+TEST(StringUtils, ExtractedCharacterMaintainsCase) {
+    ASSERT_THAT(head("fedcba"), Ne("F"));
+}
