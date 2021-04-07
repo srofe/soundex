@@ -5,6 +5,7 @@
 
 namespace stringutil {
     std::string head(const std::string& word);
+    std::string tail(const std::string& word);
 };
 
 #endif // StringUtil_h
