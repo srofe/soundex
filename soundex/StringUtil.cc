@@ -6,6 +6,6 @@ namespace stringutil {
     }
 
     std::string tail(const std::string& word) {
-        return "werty";
+        return word.substr(1);
     }
 }
