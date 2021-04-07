@@ -9,7 +9,7 @@ TEST(StringUtils, HeadExtractsFirstCharacterFromString) {
     ASSERT_THAT(head("abcdef"), Eq("a"));
 }
 
-TEST(StringUtils, ExtractedCharacterMaintainsCase) {
+TEST(StringUtils, HeadDoesNotChangeCaseOfString) {
     ASSERT_THAT(head("fedcba"), Ne("F"));
 }
 
