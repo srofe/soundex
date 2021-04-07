@@ -11,6 +11,6 @@ namespace stringutil {
     }
 
     std::string zeroPad(const std::string& word, unsigned int toLength) {
-        return "A000";
+        return word + std::string(3, '0');
     }
 }

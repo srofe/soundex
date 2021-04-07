@@ -32,3 +32,7 @@ TEST(StringUtil, TailOfEmptyStringIsEmptyString) {
 TEST(StringUtil, ZeroPadSingleCharacter) {
     ASSERT_THAT(zeroPad("A", 4), Eq("A000"));
 }
+
+TEST(StringUtile, ZeroPadTwoCharacters) {
+    ASSERT_THAT(zeroPad("ab", 5), Eq("ab000"));
+}
