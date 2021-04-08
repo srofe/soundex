@@ -8,6 +8,6 @@ namespace stringutil {
     std::string tail(const std::string& word);
     std::string zeroPad(const std::string& word, unsigned int toLength);
     std::string upperFront(const std::string& word);
-};
+}
 
 #endif // StringUtil_h

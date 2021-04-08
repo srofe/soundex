@@ -58,7 +58,7 @@ private:
         return std::string(1, encoding.back());
     }
 
-    bool isComplete(const std::string& encoding) const {
+    static bool isComplete(const std::string& encoding) {
         return encoding.length() == MaxCodeLength;
     }
 };
