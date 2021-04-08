@@ -9,7 +9,7 @@
 class Soundex {
 public:
     std::string encode(const std::string& word) const {
-        return stringutil::zeroPad(stringutil::upperFront(stringutil::head(word)) + stringutil::tail(encodedDigits(word)), MaxCodeLength);
+        return stringutil::zeroPad(stringutil::upperFront(word) + stringutil::tail(encodedDigits(word)), MaxCodeLength);
     }
 
     std::string encodedDigit(char letter) const {
