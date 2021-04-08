@@ -44,3 +44,7 @@ TEST(StringUtils, ZeroPadDoesNotChangeCaseOfString) {
 TEST(StringUtils, WhenLengthOfPaddedStringLessThanStringDoNotChangeString) {
     ASSERT_THAT(zeroPad("lkij", 3), Eq("lkij"));
 }
+
+TEST(StringUtils, GetUpperCaseOfFirstLetter) {
+    ASSERT_THAT(upperFront("abcd"), Eq("A"));
+}

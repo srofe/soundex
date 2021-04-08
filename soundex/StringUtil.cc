@@ -1,5 +1,5 @@
 #include "StringUtil.h"
-#include <iostream>
+#include "CharUtil.h"
 
 namespace stringutil {
     std::string head(const std::string& word) {
@@ -15,5 +15,9 @@ namespace stringutil {
         if (toLength < word.length()) return word;
         auto numberOfZerosToAdd = toLength - word.length();
         return word + std::string(numberOfZerosToAdd, '0');
+    }
+
+    std::string upperFront(const std::string& word) {
+        return std::string(1, charutil::upper(word.front()));
     }
 }
