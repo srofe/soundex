@@ -8,9 +8,12 @@ link_directories(/Users/simon/lib/googletest/build/lib)
 set(sources
         main.cc
         SoundexTest.cc
-        CharUtilTest.cc)
+        CharUtilTest.cc
+        StringUtilTests.cc)
+
 set (testsources
-        ../soundex/CharUtil.cc)
+        ../soundex/CharUtil.cc
+        ../soundex/StringUtil.cc)
 
 add_executable(test ${testsources} ${sources})
 

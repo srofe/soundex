@@ -1,7 +1,5 @@
 #include "gmock/gmock.h"
-
 #include <string>
-
 #include "CharUtil.h"
 
 using namespace std;
